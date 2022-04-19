@@ -2,10 +2,13 @@ local modem = peripheral.wrap("left")
 ID = nil
 modem.open(3)
 
+--[[
+    connectToHost is used to connect the turtle to the host system
+]]
 function connectToHost(hostChannel)
     local responseChannel = 2
     modem.open(responseChannel)
-
+    
     modem.transmit(hostChannel,responseChannel,"Connect")
     
     --Wait for a response on the response channel
